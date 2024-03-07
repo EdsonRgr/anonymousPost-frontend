@@ -1,0 +1,62 @@
+<mat-toolbar class="toolbar">
+    <span >Posts Anonymous</span>
+    <mat-icon class="logo">contact_support</mat-icon>
+</mat-toolbar>
+
+
+
+<section class="container">
+    <div class="search">
+
+        <p> {{contadorDePosts}} posts.</p>
+        
+        
+        
+        <mat-form-field class="example-form-field">
+            <mat-label>Pesquisar posts</mat-label>
+            <input matInput type="text" placeholder="Pesquisar posts" (input)="search($event)">
+        </mat-form-field>
+
+
+        <button mat-mini-fab color="accent" (click)="createPost()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+
+    <mat-card class="post" *ngFor="let post of postsFiltrados">
+        <mat-card-header class="header">
+             
+        <mat-icon class="perfil">account_circle</mat-icon>
+        <h2>{{post.nomeDoUsuario}}</h2>
+          
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="editarPost(post)" [disabled]="post.desativado">
+                <mat-icon>edit</mat-icon>
+                <span>Editar</span>
+            </button>
+            <button mat-menu-item  (click)="desativarPost(post.id)" [disabled]="post.desativado">
+                <mat-icon>block</mat-icon>
+                <span>Desativar</span>
+            </button>
+            <button mat-menu-item (click)="excluiPost(post.id)">
+                <mat-icon>delete_sweep</mat-icon>
+                <span>Excluir</span>
+            </button>
+        </mat-menu>
+
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{post.texto}}</p>
+          <mat-divider></mat-divider>
+          <div class="footerPost" fxLayout="row" fxLayoutAlign="space-around center">
+              <p>{{post.dataCriacao | date:'medium' : '' :'pt-BR'}}</p>
+              <p *ngIf="post.dataAlteracao != null">Editado</p>
+              <p *ngIf="post.desativado != false">Desativado</p>
+          </div>
+        </mat-card-content>
+    </mat-card>
+</section>

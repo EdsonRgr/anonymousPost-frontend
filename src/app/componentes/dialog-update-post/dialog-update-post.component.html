@@ -1,0 +1,18 @@
+<mat-card>
+  <h1 fxLayoutAlign="center">Atualizar Post</h1>
+  <form [formGroup]="formulario">
+    <mat-form-field class="example-full-width">
+      <label for="texto">Post:</label>
+      <textarea rows="7" matInput maxlength="256" #texto id="texto" formControlName="texto" placeholder="escreva oque quiser" required></textarea>
+      <mat-hint >{{texto.value.length}} / 256</mat-hint>
+    </mat-form-field>
+    
+    <label for="imagem">Imagem:</label>
+    <input type="file" (change)="onFileSelected($event)" formControlName="urlImg">
+    
+  </form>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="atualizarPost()">Atualizar</button>
+    <button mat-raised-button  [mat-dialog-close] >Cancelar</button>
+  </mat-card-actions>
+</mat-card>
