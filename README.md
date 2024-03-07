@@ -1,27 +1,26 @@
-# AnonymousPostFront
+# Anonymous Post - Aplicação Front-end
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+Esta é uma aplicação front-end construída com Angular version 16.2.12 e Angular Material. A aplicação permite a criação, leitura, atualização e exclusão de postagens anônimas..
 
-## Development server
+## Configuração
+Para clonar e executar esta aplicação, você precisará do Git, JDK 11 e Maven instalados em seu computador. No seu terminal:
+```bash
+# Clone este repositório
+$ git clone <url-do-repositorio>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Entre no repositório
+$ cd nome-do-repositorio
 
-## Code scaffolding
+# Instale as dependências
+$ npm install
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Execute a aplicação
+$ ng serve
+```
+Agora, navegue para http://localhost:4200/. A aplicação será recarregada automaticamente se você alterar qualquer um dos arquivos de origem.
 
-## Build
+## Serviços
+Os serviços são usados para mapear os endpoints da API. Eles são responsáveis por fazer chamadas HTTP para a API back-end.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Angular Material
+Esta aplicação utiliza o Angular Material, uma biblioteca de componentes de interface do usuário para Angular. Ela fornece uma variedade de componentes pré-construídos que você pode usar para criar interfaces de usuário interativas e atraentes.
